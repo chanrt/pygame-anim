@@ -42,5 +42,4 @@ class Ripple:
 
     def render(self):
         if self.display:
-            print(self.thickness)
             pg.draw.circle(self.screen, self.color, (int(self.x), int(self.y)), int(self.radius), int(self.thickness))
