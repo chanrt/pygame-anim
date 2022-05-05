@@ -11,9 +11,9 @@ class Particle:
         self.theta = theta
 
     def update(self):
-        noise = 0.03 * random()
-        self.x += cos(self.theta) + noise
-        self.y += sin(self.theta) + noise
+        noise = 1 * random() - 0.5
+        self.x += cos(self.theta + noise)
+        self.y += sin(self.theta + noise)
     
 
 class Explosion:
