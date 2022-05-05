@@ -11,8 +11,8 @@ class Highlight:
 
         self.display = True
 
-        self.highest_thickness = 5
-        self.lowest_thickness = 1
+        self.highest_thickness = 6
+        self.lowest_thickness = 2
         self.thickness_velocity = 0.2
 
         self.thickness = self.lowest_thickness
