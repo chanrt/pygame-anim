@@ -4,6 +4,7 @@ import pygame as pg
 from explosion import Explosion
 from fade import Fade
 from highlight import Highlight
+from revolve import Revolve
 from ripple import Ripple
 from ripple_generator import RippleGenerator
 
@@ -16,11 +17,13 @@ def loop():
     bg_color = pg.Color(32, 32, 32)
 
     highlight = Highlight(50, 50, 30, pg.Color("blue"), screen)
+    revolve = Revolve(200, 200, 100, 10, pg.Color("yellow"), screen)
     ripple_generator = RippleGenerator(400, 300, 50, 100, 70, 1, pg.Color("red"), screen)
 
     animations = []
     animations.append(highlight)
     animations.append(ripple_generator)
+    animations.append(revolve)
 
     while True:
         clock.tick(60)
