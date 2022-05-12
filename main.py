@@ -1,6 +1,7 @@
 from random import randint
 import pygame as pg
 
+from directed_explosion import DirectedExplosion
 from explosion import Explosion
 from fade import Fade
 from highlight import Highlight
@@ -12,6 +13,7 @@ from ripple_generator import RippleGenerator
 def loop():
     pg.init()
     screen = pg.display.set_mode((800, 600))
+    screen_width, screen_height = screen.get_size()
     clock = pg.time.Clock()
 
     bg_color = pg.Color(32, 32, 32)
@@ -45,7 +47,7 @@ def loop():
                     animations.append(Fade(0, 255, 2, pg.Color(32, 32, 32), screen))
             if event.type == pg.MOUSEBUTTONDOWN:
                 mouse_x, mouse_y = pg.mouse.get_pos()
-                animations.append(Explosion(mouse_x, mouse_y, 30, pg.Color(randint(0, 255), randint(0, 255), randint(0, 255)), screen))
+                animations.append(DirectedExplosion(mouse_x, mouse_y, screen_width // 2, screen_height // 2, 30, pg.Color(randint(0, 255), randint(0, 255), randint(0, 255)), screen))
 
         for animation in animations:
             animation.update()
